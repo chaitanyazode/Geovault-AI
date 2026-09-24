@@ -1,0 +1,176 @@
+# ============================================================
+# GeoVault AI - Git Ignore
+# ============================================================
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.secret
+
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# -------------------------
+# Node / Next.js
+# -------------------------
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# -------------------------
+# IDE / Editors
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Docker / Runtime Data
+# -------------------------
+postgres_data/
+redis_data/
+
+# Runtime/generated storage
+documents/
+processed_data/
+reports/
+
+# -------------------------
+# AI Models
+# IMPORTANT:
+# Do NOT upload Qwen GGUF or BGE-M3
+# -------------------------
+models/
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+logs/
+
+# -------------------------
+# Temporary files
+# -------------------------
+tmp/
+temp/
+.cache/
+
+# -------------------------
+# Local datasets / archives
+# -------------------------
+Coal Data/
+archive/
+
+# Large local data files
+*.parquet
+
+# -------------------------
+# Generated / build artifacts
+# -------------------------
+dist/
+build/
+coverage/
+
+# -------------------------
+# Local database files
+# -------------------------
+*.db
+*.sqlite
+*.sqlite3
+
+# -------------------------
+# Backup files
+# -------------------------
+*.bak
+*.backup
+*.old
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Next.js
+.next/
+node_modules/
+*.tsbuildinfo
+
+# Generated application data
+backend/data/generated/
+
+# Local models
+models/
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# Docker runtime data
+postgres_data/
+redis_data/
+documents/
+processed_data/
+reports/
+
+# Old / archived datasets
+archive/
+Coal Data/
+
+# Temporary / logs
+*.log
+tmp/
+temp/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

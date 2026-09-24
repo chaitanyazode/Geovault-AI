@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "geotechnical_zones",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Zone_ID": "NIGAHI-GZ-01", "Mine_ID": "M-NIGAHI", "Mine_Code": "NIGAHI", "Zone_Type": "Stable Bench Zone", "Risk_Class": "LOW", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.5825, 24.13 ], [ 82.6075, 24.13 ], [ 82.6125, 24.17 ], [ 82.5775, 24.17 ], [ 82.5825, 24.13 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "NIGAHI-GZ-02", "Mine_ID": "M-NIGAHI", "Mine_Code": "NIGAHI", "Zone_Type": "Weathered Highwall Zone", "Risk_Class": "LOW", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.5975, 24.13 ], [ 82.6225, 24.13 ], [ 82.6275, 24.17 ], [ 82.5925, 24.17 ], [ 82.5975, 24.13 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "NIGAHI-GZ-03", "Mine_ID": "M-NIGAHI", "Mine_Code": "NIGAHI", "Zone_Type": "Fault Influence Zone", "Risk_Class": "LOW", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6125, 24.13 ], [ 82.6375, 24.13 ], [ 82.6425, 24.17 ], [ 82.6075, 24.17 ], [ 82.6125, 24.13 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "NIGAHI-GZ-04", "Mine_ID": "M-NIGAHI", "Mine_Code": "NIGAHI", "Zone_Type": "Water-Influenced Zone", "Risk_Class": "HIGH", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6275, 24.13 ], [ 82.6525, 24.13 ], [ 82.6575, 24.17 ], [ 82.6225, 24.17 ], [ 82.6275, 24.13 ] ] ] } }
+]
+}

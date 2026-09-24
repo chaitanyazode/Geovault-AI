@@ -1,0 +1,8 @@
+geopandas
+pyogrio
+shapely
+rasterio
+ezdxf
+pandas
+openpyxl
+matplotlib

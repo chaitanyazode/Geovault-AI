@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "geological_events_spatial",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Event_ID": "EV-NIGAHI-GEO-01", "Mine_ID": "M-NIGAHI", "Mine_Code": "NIGAHI", "Financial_Year": "FY 2023-24", "Event_Type": "Geotechnical", "Severity": "Moderate", "Area": "Central working block", "Description": "Localized synthetic bench movement triggered additional inspection and monitoring.", "Action": "Increase inspection frequency; review haulage alignment.", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic event location linked to geological event record" }, "geometry": { "type": "Point", "coordinates": [ 82.650043736785136, 24.125265000319878 ] } },
+{ "type": "Feature", "properties": { "Event_ID": "EV-NIGAHI-WAT-01", "Mine_ID": "M-NIGAHI", "Mine_Code": "NIGAHI", "Financial_Year": "FY 2021-22", "Event_Type": "Hydrology", "Severity": "Moderate", "Area": "Pit floor / drainage", "Description": "Synthetic monsoon water accumulation affected selected working areas.", "Action": "Temporary pumping and drainage-channel maintenance.", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic event location linked to geological event record" }, "geometry": { "type": "Point", "coordinates": [ 82.653504029776713, 24.149537438962938 ] } }
+]
+}

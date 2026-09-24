@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "geotechnical_zones",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Zone_ID": "KUSMUNDA-GZ-01", "Mine_ID": "M-KUSMUNDA", "Mine_Code": "KUSMUNDA", "Zone_Type": "Stable Bench Zone", "Risk_Class": "HIGH", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6325, 22.285 ], [ 82.6575, 22.285 ], [ 82.6625, 22.325 ], [ 82.6275, 22.325 ], [ 82.6325, 22.285 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "KUSMUNDA-GZ-02", "Mine_ID": "M-KUSMUNDA", "Mine_Code": "KUSMUNDA", "Zone_Type": "Weathered Highwall Zone", "Risk_Class": "LOW", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6475, 22.285 ], [ 82.6725, 22.285 ], [ 82.6775, 22.325 ], [ 82.6425, 22.325 ], [ 82.6475, 22.285 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "KUSMUNDA-GZ-03", "Mine_ID": "M-KUSMUNDA", "Mine_Code": "KUSMUNDA", "Zone_Type": "Fault Influence Zone", "Risk_Class": "HIGH", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6625, 22.285 ], [ 82.6875, 22.285 ], [ 82.6925, 22.325 ], [ 82.6575, 22.325 ], [ 82.6625, 22.285 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "KUSMUNDA-GZ-04", "Mine_ID": "M-KUSMUNDA", "Mine_Code": "KUSMUNDA", "Zone_Type": "Water-Influenced Zone", "Risk_Class": "MODERATE", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6775, 22.285 ], [ 82.7025, 22.285 ], [ 82.7075, 22.325 ], [ 82.6725, 22.325 ], [ 82.6775, 22.285 ] ] ] } }
+]
+}

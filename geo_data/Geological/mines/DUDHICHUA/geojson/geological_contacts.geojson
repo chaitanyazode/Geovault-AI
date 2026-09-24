@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "geological_contacts",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Contact_ID": "DUDHICHUA-GC-01", "Mine_ID": "M-DUDHICHUA", "Mine_Code": "DUDHICHUA", "Contact_Type": "SEAM_CONTACT", "Unit_A": "Sandstone", "Unit_B": "Shale", "Confidence": "DEMO", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geological contact" }, "geometry": { "type": "LineString", "coordinates": [ [ 82.67, 24.115 ], [ 82.69, 24.175 ] ] } },
+{ "type": "Feature", "properties": { "Contact_ID": "DUDHICHUA-GC-02", "Mine_ID": "M-DUDHICHUA", "Mine_Code": "DUDHICHUA", "Contact_Type": "SEAM_CONTACT", "Unit_A": "Sandstone", "Unit_B": "Shale", "Confidence": "DEMO", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geological contact" }, "geometry": { "type": "LineString", "coordinates": [ [ 82.7, 24.115 ], [ 82.72, 24.175 ] ] } },
+{ "type": "Feature", "properties": { "Contact_ID": "DUDHICHUA-GC-03", "Mine_ID": "M-DUDHICHUA", "Mine_Code": "DUDHICHUA", "Contact_Type": "SEAM_CONTACT", "Unit_A": "Sandstone", "Unit_B": "Shale", "Confidence": "DEMO", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geological contact" }, "geometry": { "type": "LineString", "coordinates": [ [ 82.73, 24.115 ], [ 82.75, 24.175 ] ] } }
+]
+}

@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "landuse",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Landuse_ID": "DIPKA-LU-01", "Mine_ID": "M-DIPKA", "Mine_Code": "DIPKA", "Landuse_Class": "Active Mine Working", "Status": "SYNTHETIC", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic land-use classification" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.475, 22.306 ], [ 82.495, 22.3 ], [ 82.515, 22.33 ], [ 82.495, 22.336 ], [ 82.475, 22.306 ] ] ] } },
+{ "type": "Feature", "properties": { "Landuse_ID": "DIPKA-LU-02", "Mine_ID": "M-DIPKA", "Mine_Code": "DIPKA", "Landuse_Class": "Overburden Dump", "Status": "SYNTHETIC", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic land-use classification" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.485, 22.306 ], [ 82.505, 22.3 ], [ 82.525, 22.33 ], [ 82.505, 22.336 ], [ 82.485, 22.306 ] ] ] } },
+{ "type": "Feature", "properties": { "Landuse_ID": "DIPKA-LU-03", "Mine_ID": "M-DIPKA", "Mine_Code": "DIPKA", "Landuse_Class": "Infrastructure", "Status": "SYNTHETIC", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic land-use classification" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.495, 22.306 ], [ 82.515, 22.3 ], [ 82.535, 22.33 ], [ 82.515, 22.336 ], [ 82.495, 22.306 ] ] ] } },
+{ "type": "Feature", "properties": { "Landuse_ID": "DIPKA-LU-04", "Mine_ID": "M-DIPKA", "Mine_Code": "DIPKA", "Landuse_Class": "Green/Reclaimed Area", "Status": "SYNTHETIC", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic land-use classification" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.505, 22.306 ], [ 82.525, 22.3 ], [ 82.545, 22.33 ], [ 82.525, 22.336 ], [ 82.505, 22.306 ] ] ] } },
+{ "type": "Feature", "properties": { "Landuse_ID": "DIPKA-LU-05", "Mine_ID": "M-DIPKA", "Mine_Code": "DIPKA", "Landuse_Class": "Water Body", "Status": "SYNTHETIC", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic land-use classification" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.515, 22.306 ], [ 82.535, 22.3 ], [ 82.555, 22.33 ], [ 82.535, 22.336 ], [ 82.515, 22.306 ] ] ] } },
+{ "type": "Feature", "properties": { "Landuse_ID": "DIPKA-LU-06", "Mine_ID": "M-DIPKA", "Mine_Code": "DIPKA", "Landuse_Class": "Road/Transport", "Status": "SYNTHETIC", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic land-use classification" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.525, 22.306 ], [ 82.545, 22.3 ], [ 82.565, 22.33 ], [ 82.545, 22.336 ], [ 82.525, 22.306 ] ] ] } }
+]
+}

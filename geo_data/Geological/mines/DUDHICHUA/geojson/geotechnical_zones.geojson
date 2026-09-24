@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "geotechnical_zones",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Zone_ID": "DUDHICHUA-GZ-01", "Mine_ID": "M-DUDHICHUA", "Mine_Code": "DUDHICHUA", "Zone_Type": "Stable Bench Zone", "Risk_Class": "LOW", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6675, 24.125 ], [ 82.6925, 24.125 ], [ 82.6975, 24.165 ], [ 82.6625, 24.165 ], [ 82.6675, 24.125 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "DUDHICHUA-GZ-02", "Mine_ID": "M-DUDHICHUA", "Mine_Code": "DUDHICHUA", "Zone_Type": "Weathered Highwall Zone", "Risk_Class": "MODERATE", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6825, 24.125 ], [ 82.7075, 24.125 ], [ 82.7125, 24.165 ], [ 82.6775, 24.165 ], [ 82.6825, 24.125 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "DUDHICHUA-GZ-03", "Mine_ID": "M-DUDHICHUA", "Mine_Code": "DUDHICHUA", "Zone_Type": "Fault Influence Zone", "Risk_Class": "HIGH", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.6975, 24.125 ], [ 82.7225, 24.125 ], [ 82.7275, 24.165 ], [ 82.6925, 24.165 ], [ 82.6975, 24.125 ] ] ] } },
+{ "type": "Feature", "properties": { "Zone_ID": "DUDHICHUA-GZ-04", "Mine_ID": "M-DUDHICHUA", "Mine_Code": "DUDHICHUA", "Zone_Type": "Water-Influenced Zone", "Risk_Class": "MODERATE", "Basis": "Synthetic demonstration interpretation", "Data_Type": "SYNTHETIC_DEMO", "Source_Provenance": "Synthetic geotechnical zone; not an engineering design input" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.7125, 24.125 ], [ 82.7375, 24.125 ], [ 82.7425, 24.165 ], [ 82.7075, 24.165 ], [ 82.7125, 24.125 ] ] ] } }
+]
+}

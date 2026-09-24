@@ -1,0 +1,16 @@
+{
+  "mine_count": 5,
+  "financial_years": [
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25"
+  ],
+  "records": 30,
+  "master_missing_cells": 10,
+  "yoy_validation_passed": true,
+  "natural_baseline_yoy_blank": "FY2019-20 only",
+  "all_other_analytical_fields_filled": true
+}

@@ -1,0 +1,188 @@
+services:
+  # ============================================================================
+  # 1. PostgreSQL 16 + pgvector Database
+  # ============================================================================
+  postgres:
+    build:
+      context: .
+      dockerfile: docker/postgres/Dockerfile
+    image: geovault-postgres:16-postgis
+    container_name: geovault_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-geovault_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-geovault_secure_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-geovault}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-geovault_admin} -d ${POSTGRES_DB:-geovault}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - geovault_net
+
+  # ============================================================================
+  # 2. Redis In-Memory Store & Message Broker
+  # ============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: geovault_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - geovault_net
+
+  # ============================================================================
+  # 3. Local LLM Server (llama.cpp + Qwen3-8B-Q4_K_M)
+  # Strictly internal to Docker network — NOT exposed to public host ports
+  # ============================================================================
+  llm:
+    image: ${LLM_DOCKER_IMAGE:-ghcr.io/ggml-org/llama.cpp:server}
+    container_name: geovault_llm
+    restart: unless-stopped
+    command: >
+      -m /models/Qwen3-8B-Q4_K_M.gguf
+      --host 0.0.0.0
+      --port 8080
+      -c ${LLM_CTX_SIZE:-2048}
+      -t ${LLM_THREADS:-6}
+      -ngl ${LLM_N_GPU_LAYERS:-0}
+    volumes:
+      - ./models:/models:ro
+    expose:
+      - "8080"
+    networks:
+      - geovault_net
+
+  # ============================================================================
+  # 4. FastAPI Backend Application
+  # ============================================================================
+  backend:
+    image: geovault-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: geovault_backend
+    restart: unless-stopped
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - DEBUG=${DEBUG:-True}
+      - POSTGRES_USER=${POSTGRES_USER:-geovault_admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-geovault_secure_pass}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-geovault}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-redis://redis:6379/0}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/1}
+      - LLM_BASE_URL=${LLM_BASE_URL:-http://llm:8080/v1}
+      - LLM_MODEL_NAME=${LLM_MODEL_NAME:-Qwen3-8B-Q4_K_M.gguf}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./worker:/app/worker
+      - ./scripts:/app/scripts
+      - ./models:/models
+      - "./geo_data:/data/geo_data:ro"
+      - processed_data:/data/processed
+      - reports:/data/reports
+      - documents:/data/documents
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      llm:
+        condition: service_started
+    networks:
+      - geovault_net
+
+  # ============================================================================
+  # 5. Celery Asynchronous Worker
+  # ============================================================================
+  worker:
+    image: geovault-backend:latest
+    container_name: geovault_worker
+    restart: unless-stopped
+    command: ["celery", "-A", "worker.celery_app.celery_app", "worker", "--loglevel=info"]
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - POSTGRES_USER=${POSTGRES_USER:-geovault_admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-geovault_secure_pass}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-geovault}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-redis://redis:6379/0}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/1}
+    volumes:
+      - ./backend:/app
+      - ./worker:/app/worker
+      - ./models:/models
+      - "./geo_data:/data/geo_data:ro"
+      - processed_data:/data/processed
+      - reports:/data/reports
+      - documents:/data/documents
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    networks:
+      - geovault_net
+
+  # ============================================================================
+  # 6. Next.js Frontend Dashboard
+  # ============================================================================
+  frontend:
+    image: geovault-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: geovault_frontend
+    restart: unless-stopped
+    environment:
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - geovault_net
+
+# ==============================================================================
+# Persistent Volumes & Network Topology
+# ==============================================================================
+volumes:
+  postgres_data:
+    name: geovault_postgres_data
+  redis_data:
+    name: geovault_redis_data
+  documents:
+    name: geovault_documents
+  processed_data:
+    name: geovault_processed_data
+  reports:
+    name: geovault_reports
+
+networks:
+  geovault_net:
+    name: geovault_network
+    driver: bridge

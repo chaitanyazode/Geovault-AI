@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "version": "FINAL_v1.0",
+  "synthetic_only": true,
+  "mines": [
+    "GEVRA",
+    "KUSMUNDA",
+    "DIPKA",
+    "NIGAHI",
+    "DUDHICHUA"
+  ],
+  "counts": {
+    "mines": 5,
+    "mine_year_operational_records": 30,
+    "baseline_boreholes": 60,
+    "detailed_borehole_intervals": 600,
+    "coal_seams": 21,
+    "geological_units": 30,
+    "survey_points": 125,
+    "geological_contacts": 15,
+    "borehole_traces": 60,
+    "geotechnical_zones": 20,
+    "landuse_polygons": 30,
+    "geological_event_points": 10,
+    "coal_seam_belts": 21,
+    "cross_section_sample_points": 210,
+    "qa_test_cases": 150,
+    "dxf_cross_sections": 10,
+    "geotiff_rasters": 10,
+    "gpkg_layers": 90
+  },
+  "operational_linkage": {
+    "records_compared": 30,
+    "match_key": "Operational_Mine_ID + Mine_Name + Financial_Year",
+    "mismatched_fields": [],
+    "result": "EXACT_MATCH"
+  },
+  "spatial_validation": {
+    "gpkg_layers_expected": 90,
+    "gpkg_layers_actual": 90,
+    "shapefile_errors": [],
+    "raster_errors": [],
+    "dxf_errors": []
+  }
+}
